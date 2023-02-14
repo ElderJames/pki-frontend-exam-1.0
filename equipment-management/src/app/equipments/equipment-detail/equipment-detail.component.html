@@ -1,0 +1,26 @@
+<h3>Detail - {{ equipment?.id }}</h3>
+
+<div class="equ-detail" *ngIf="equipment!=null">
+    <div class="equ-detail-item">
+        <label class="equ-detail-label">Model:</label>
+        <span class="equ-detail-item-content">{{ equipment.model }}</span>
+    </div>
+    <div class="equ-detail-item">
+        <label class="equ-detail-label">Brand:</label>
+        <span class="equ-detail-item-content">{{ equipment.brand }}</span>
+    </div>
+    <div class="equ-detail-item">
+        <label class="equ-detail-label">Weight:</label>
+        <span class="equ-detail-item-content">{{ equipment.weight }}</span>
+    </div>
+    <div class="equ-detail-item">
+        <label class="equ-detail-label">ManufactureDate:</label>
+        <span class="equ-detail-item-content">{{ equipment.manufactureDate }}</span>
+    </div>
+</div>
+
+<div class="equ-detail-actions">
+    <button mat-raised-button routerLink="/">Back</button>
+    <button mat-raised-button [routerLink]="'./edit'" color="primary">Edit</button>
+    <button mat-raised-button (click)="delete()" color="warn">Delete</button>
+</div>

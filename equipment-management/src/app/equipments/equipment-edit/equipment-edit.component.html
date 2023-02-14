@@ -1,0 +1,28 @@
+<h3>{{isNew?'New':'Edit'}} Equipment</h3>
+
+<form [formGroup]="equipmentForm" (ngSubmit)="onSubmit()">
+    <div class="equ-detail">
+        <div class="equ-detail-item">
+            <label class="equ-detail-label" for="model">Model: </label>
+            <input class="equ-detail-item-content" id="model" type="text" formControlName="model">
+        </div>
+        <div class="equ-detail-item">
+            <label class="equ-detail-label" for="brand">Brand: </label>
+            <input class="equ-detail-item-content" id="brand" type="text" formControlName="brand">
+        </div>
+        <div class="equ-detail-item">
+            <label class="equ-detail-label" for="weight">Weight: </label>
+            <input class="equ-detail-item-content" id="weight" type="text" formControlName="weight">
+        </div>
+        <div class="equ-detail-item">
+            <label class="equ-detail-label" for="manufactureDate">manufactureDate: </label>
+            <input class="equ-detail-item-content" id="manufactureDate" type="date" formControlName="manufactureDate">
+        </div>
+    </div>
+    <div class="equ-detail-actions">
+        <button type="button" mat-raised-button *ngIf="isNew" [routerLink]="'/'">Back</button>
+        <button type="button" mat-raised-button *ngIf="!isNew" [routerLink]="'/equipments/'+ id">Back</button>
+        <button type="submit" color="primary" mat-raised-button>Submit</button>
+        <!-- <button type="reset" color="warn" mat-raised-button>Reset</button> -->
+    </div>
+</form>
